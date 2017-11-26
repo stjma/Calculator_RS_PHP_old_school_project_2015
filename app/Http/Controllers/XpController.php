@@ -2,18 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Xp;
 use Illuminate\Http\Request;
 
-class XpsController extends Controller
+class XpController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param $id = null
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        //
+        if(!$id){
+            $lists = Xp::get();
+
+            return view('xp.index', [
+                'ListXp' => $lists
+            ]);
+        }
+
+        $lists = Xp::get()->where('id_XpTable' . '=' . $id);
+
+        return view('xp.index', [
+            'ListXp' => $lists
+        ]);
     }
 
     /**

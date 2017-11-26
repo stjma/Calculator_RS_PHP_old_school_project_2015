@@ -26,8 +26,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
 
 
+/*Skill*/
+Route::get('/Skill', 'SkillController@index');
+
+Route::post('/Skill', 'SkillController@create');
+
+Route::get('/Skill/{id}', 'SkillController@edit');
+
+
+
 /*Competence*/
-Route::get('/Competence', 'CompetenceController@index');
+Route::get('/Competence/{id?}', 'CompetenceController@index');
 
 Route::post('/Competence', 'CompetenceController@create');
 
@@ -35,13 +44,6 @@ Route::get('/Competence/{id}', 'CompetenceController@edit');
 
 Route::delete('/Competence/{id}', 'CompetenceController@destroy');
 
-
-/*Skill*/
-Route::get('/Skill', 'SkillController@index');
-
-Route::post('/Skill', 'SkillController@create');
-
-Route::get('/Skill/{id}', 'SkillController@edit');
 
 
 /*XpTable*/
@@ -53,7 +55,7 @@ Route::get('/XpTable/{id}', 'XpTableController@edit');
 
 
 /*Xp*/
-Route::get('/Xp', 'XpController@index');
+Route::get('/Xp/{id?}', 'XpController@index');
 
 Route::post('/Xp', 'XpController@create');
 

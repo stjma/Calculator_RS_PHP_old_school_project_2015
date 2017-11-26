@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\XpTable;
 use Illuminate\Http\Request;
 
 class XpTableController extends Controller
@@ -13,7 +14,11 @@ class XpTableController extends Controller
      */
     public function index()
     {
-        //
+        $lists = XpTable::get();
+
+        return view('xpTable.index', [
+            'ListXpTable' => $lists
+        ]);
     }
 
     /**

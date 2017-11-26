@@ -2,18 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Competence;
 use Illuminate\Http\Request;
 
 class CompetenceController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param id = null
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        //
+        if(!$id){
+            $lists = Competence::get();
+
+            return view('Skill.index', [
+                'ListSkill' => $lists
+            ]);
+        }
+
+        $lists = Competence::get()->where('id_skill' . '=' . $id);
+
+        return view('Skill.index', [
+            'ListSkill' => $lists
+        ]);
     }
 
     /**

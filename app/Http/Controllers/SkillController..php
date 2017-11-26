@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Skill;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller
@@ -13,7 +14,11 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        $lists = Skill::get();
+
+        return view('Skill.index', [
+            'ListSkill' => $lists
+        ]);
     }
 
     /**
