@@ -19,7 +19,6 @@ class CreateXpTable extends Migration
             $table->integer('lvl');
             $table->integer('xps');
             $table->integer('dif');
-            $table->timestamps();
         });
     }
 
