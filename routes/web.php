@@ -31,7 +31,7 @@ Route::get('/Competence', 'CompetenceController@index');
 
 Route::post('/CreateCompetence', 'CompetenceController@create');
 
-Route::get('/EditCompetence', 'CompetenceController@edit');
+Route::get('/EditCompetence/{id}', 'CompetenceController@edit');
 
 Route::delete('/DeleteCompetence/{id}', 'CompetenceController@destroy');
 
@@ -41,7 +41,7 @@ Route::get('/Skill', 'SkillController@index');
 
 Route::post('/CreateSkill', 'SkillController@create');
 
-Route::get('/EditSkill', 'SkillController@edit');
+Route::get('/EditSkill/{id}', 'SkillController@edit');
 
 
 /*XpTable*/
@@ -49,7 +49,7 @@ Route::get('/XpTable', 'XpTableController@index');
 
 Route::post('/CreateXpTable', 'XpTableController@create');
 
-Route::get('/EditXpTable', 'XpTableController@edit');
+Route::get('/EditXpTable/{id}', 'XpTableController@edit');
 
 
 /*Xp*/
@@ -57,7 +57,7 @@ Route::get('/Xp', 'XpController@index');
 
 Route::post('/CreateXp', 'XpController@create');
 
-Route::get('/EditXp', 'XpController@edit');
+Route::get('/EditXp/{id}', 'XpController@edit');
 
 
 /*User*/
