@@ -8,6 +8,6 @@ class Competence extends Model
 {
     public function Skill()
     {
-        return $this->belongsTo('App/SkillController.');
+        return $this->belongsTo('App\Skill');
     }
 }
