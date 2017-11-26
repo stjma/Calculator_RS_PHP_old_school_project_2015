@@ -27,41 +27,41 @@ Route::get('/admin', 'AdminController@index');
 
 
 /*Skill*/
-Route::get('/Skill', 'SkillController@index');
+Route::get('/skill', 'SkillController@index');
 
-Route::post('/Skill', 'SkillController@create');
+Route::post('/skill', 'SkillController@create');
 
-Route::get('/Skill/{id}', 'SkillController@edit');
+Route::get('/skill/{id}', 'SkillController@edit');
 
 
 
 /*Competence*/
-Route::get('/Competence/{id?}', 'CompetenceController@index');
+Route::get('/competence/{id?}', 'CompetenceController@index');
 
-Route::post('/Competence', 'CompetenceController@create');
+Route::post('/competence', 'CompetenceController@create');
 
-Route::get('/Competence/{id}', 'CompetenceController@edit');
+Route::get('/competence/{id}', 'CompetenceController@edit');
 
-Route::delete('/Competence/{id}', 'CompetenceController@destroy');
+Route::delete('/competence/{id}', 'CompetenceController@destroy');
 
 
 
 /*XpTable*/
-Route::get('/XpTable', 'XpTableController@index');
+Route::get('/xpTable', 'XpTableController@index');
 
-Route::post('/XpTable', 'XpTableController@create');
+Route::post('/xpTable', 'XpTableController@create');
 
-Route::get('/XpTable/{id}', 'XpTableController@edit');
+Route::get('/xpTable/{id}', 'XpTableController@edit');
 
 
 /*Xp*/
-Route::get('/Xp/{id?}', 'XpController@index');
+Route::get('/xp/{id?}', 'XpController@index');
 
-Route::post('/Xp', 'XpController@create');
+Route::post('/xp', 'XpController@create');
 
-Route::get('/Xp/{id}', 'XpController@edit');
+Route::get('/xp/{id}', 'XpController@edit');
 
 
 /*User*/
-Route::get('/User', 'UserController@index');
-Route::get('/Calculator', 'UserController@show');
+Route::get('/user', 'UserController@index');
+Route::get('/calculator', 'UserController@show');
