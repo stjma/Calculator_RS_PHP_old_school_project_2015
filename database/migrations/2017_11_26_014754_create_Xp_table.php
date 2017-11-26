@@ -15,6 +15,10 @@ class CreateXpTable extends Migration
     {
         Schema::create('Xp', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_XpTable')->reference('id')->on('XpTable');
+            $table->integer('lvl');
+            $table->integer('xps');
+            $table->integer('dif');
             $table->timestamps();
         });
     }

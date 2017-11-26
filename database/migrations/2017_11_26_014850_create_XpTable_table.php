@@ -15,7 +15,7 @@ class CreateXpTableTable extends Migration
     {
         Schema::create('XpTable', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
         });
     }
 
