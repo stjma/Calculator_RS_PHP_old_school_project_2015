@@ -22,43 +22,44 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-/*Admin*/
-Route::get('/Admin', 'AdminController@index');
+/*admin*/
+Route::get('/admin', 'AdminController@index');
 
 
 /*Competence*/
 Route::get('/Competence', 'CompetenceController@index');
 
-Route::post('/CreateCompetence', 'CompetenceController@create');
+Route::post('/Competence', 'CompetenceController@create');
 
-Route::get('/EditCompetence/{id}', 'CompetenceController@edit');
+Route::get('/Competence/{id}', 'CompetenceController@edit');
 
-Route::delete('/DeleteCompetence/{id}', 'CompetenceController@destroy');
+Route::delete('/Competence/{id}', 'CompetenceController@destroy');
 
 
 /*Skill*/
 Route::get('/Skill', 'SkillController@index');
 
-Route::post('/CreateSkill', 'SkillController@create');
+Route::post('/Skill', 'SkillController@create');
 
-Route::get('/EditSkill/{id}', 'SkillController@edit');
+Route::get('/Skill/{id}', 'SkillController@edit');
 
 
 /*XpTable*/
 Route::get('/XpTable', 'XpTableController@index');
 
-Route::post('/CreateXpTable', 'XpTableController@create');
+Route::post('/XpTable', 'XpTableController@create');
 
-Route::get('/EditXpTable/{id}', 'XpTableController@edit');
+Route::get('/XpTable/{id}', 'XpTableController@edit');
 
 
 /*Xp*/
 Route::get('/Xp', 'XpController@index');
 
-Route::post('/CreateXp', 'XpController@create');
+Route::post('/Xp', 'XpController@create');
 
-Route::get('/EditXp/{id}', 'XpController@edit');
+Route::get('/Xp/{id}', 'XpController@edit');
 
 
 /*User*/
 Route::get('/User', 'UserController@index');
+Route::get('/Calculator', 'UserController@show');
