@@ -46,12 +46,12 @@ Route::delete('/competence/{id}', 'CompetenceController@destroy');
 
 
 
-/*XpTable*/
-Route::get('/xpTable', 'XpTableController@index');
+/*XpTb*/
+Route::get('/xpTb', 'XpTbController@index');
 
-Route::post('/xpTable', 'XpTableController@create');
+Route::post('/xpTb', 'XpTbController@create');
 
-Route::get('/xpTable/{id}', 'XpTableController@edit');
+Route::get('/xpTb/{id}', 'XpTbController@edit');
 
 
 /*Xp*/

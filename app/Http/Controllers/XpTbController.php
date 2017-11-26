@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\XpTable;
+use App\XpTb;
 use Illuminate\Http\Request;
 
-class XpTableController extends Controller
+class XpTbController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class XpTableController extends Controller
      */
     public function index()
     {
-        $lists = XpTable::get();
+        $lists = XpTb::get();
 
         return view('xpTable.index', [
             'ListXpTable' => $lists

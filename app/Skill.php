@@ -8,7 +8,7 @@ class Skill extends Model
 {
     public function XpTable()
     {
-        return $this->belongsTo("App\XpTable");
+        return $this->belongsTo("App\XpTb");
     }
 
     public function Competences()

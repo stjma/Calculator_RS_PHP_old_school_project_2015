@@ -8,6 +8,6 @@ class Xp extends Model
 {
     public function XpTable()
     {
-        return $this->belongsTo('App\XptTable');
+        return $this->belongsTo('App\XpTb');
     }
 }

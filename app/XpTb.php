@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class XpTable extends Model
+class XpTb extends Model
 {
     public function Xps()
     {

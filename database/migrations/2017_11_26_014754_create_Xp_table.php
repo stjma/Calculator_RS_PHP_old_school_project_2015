@@ -13,11 +13,11 @@ class CreateXpTable extends Migration
      */
     public function up()
     {
-        Schema::create('Xp', function (Blueprint $table) {
+        Schema::create('Xps', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_XpTable')->reference('id')->on('XpTable');
+            $table->integer('id_XpTable')->reference('id')->on('xp_tbs');
             $table->integer('lvl');
-            $table->integer('xps');
+            $table->integer('xp');
             $table->integer('dif');
         });
     }
