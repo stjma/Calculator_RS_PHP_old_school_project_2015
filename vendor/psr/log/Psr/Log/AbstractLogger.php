@@ -101,7 +101,7 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * Interesting events.
      *
-     * Example: User logs in, SQL logs.
+     * Example: UserController logs in, SQL logs.
      *
      * @param string $message
      * @param array  $context

@@ -46,7 +46,7 @@ class ConstantEnumerator extends Enumerator
         $ret = array();
 
         if ($user) {
-            $ret['User Constants'] = $this->getConstants('user');
+            $ret['UserController Constants'] = $this->getConstants('user');
         }
 
         if ($internal) {

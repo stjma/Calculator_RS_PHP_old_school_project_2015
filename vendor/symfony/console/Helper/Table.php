@@ -62,7 +62,7 @@ class Table
     private $columnStyles = array();
 
     /**
-     * User set column widths.
+     * UserController set column widths.
      *
      * @var array
      */

@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*Admin*/
+Route::get('/Admin', 'AdminController@index');
+
+
+/*Competence*/
