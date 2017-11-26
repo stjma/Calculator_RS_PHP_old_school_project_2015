@@ -13,9 +13,9 @@ class CreateCompetenceTable extends Migration
      */
     public function up()
     {
-        Schema::create('Competence', function (Blueprint $table) {
+        Schema::create('CompetenceController.', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_XpTable')->reference('id')->on('Skill');
+            $table->integer('id_XpTable')->reference('id')->on('SkillController.');
             $table->string('name');
             $table->integer('xp');
         });
@@ -28,6 +28,6 @@ class CreateCompetenceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Competence');
+        Schema::dropIfExists('CompetenceController.');
     }
 }

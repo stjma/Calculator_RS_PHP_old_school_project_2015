@@ -8,11 +8,11 @@ class Skill extends Model
 {
     public function XpTable()
     {
-        return $this->belongsTo("App/XpTable");
+        return $this->belongsTo("App/XpTableController.");
     }
 
     public function Competences()
     {
-        return $this->hasMany('App/Competence');
+        return $this->hasMany('App/CompetenceController.');
     }
 }

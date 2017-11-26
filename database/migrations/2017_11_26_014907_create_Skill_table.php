@@ -13,9 +13,9 @@ class CreateSkillTable extends Migration
      */
     public function up()
     {
-        Schema::create('Skill', function (Blueprint $table) {
+        Schema::create('SkillController.', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_XpTable')->reference('id')->on('Competence');
+            $table->integer('id_XpTable')->reference('id')->on('CompetenceController.');
             $table->integer('nameSkill');
         });
     }
@@ -27,6 +27,6 @@ class CreateSkillTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Skill');
+        Schema::dropIfExists('SkillController.');
     }
 }

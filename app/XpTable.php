@@ -13,6 +13,6 @@ class XpTable extends Model
 
     public function Skills()
     {
-        return $this->hasMany('App/Skill');
+        return $this->hasMany('App/SkillController.');
     }
 }
