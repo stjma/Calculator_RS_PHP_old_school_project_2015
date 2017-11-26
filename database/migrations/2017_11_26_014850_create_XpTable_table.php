@@ -13,7 +13,7 @@ class CreateXpTableTable extends Migration
      */
     public function up()
     {
-        Schema::create('XpTableController.', function (Blueprint $table) {
+        Schema::create('XpTable', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
         });
