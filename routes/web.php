@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+/*Home*/
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -25,3 +27,38 @@ Route::get('/Admin', 'AdminController@index');
 
 
 /*Competence*/
+Route::get('/Competence', 'CompetenceController@index');
+
+Route::post('/CreateCompetence', 'CompetenceController@create');
+
+Route::get('/EditCompetence', 'CompetenceController@edit');
+
+Route::delete('/DeleteCompetence/{id}', 'CompetenceController@destroy');
+
+
+/*Skill*/
+Route::get('/Skill', 'SkillController@index');
+
+Route::post('/CreateSkill', 'SkillController@create');
+
+Route::get('/EditSkill', 'SkillController@edit');
+
+
+/*XpTable*/
+Route::get('/XpTable', 'XpTableController@index');
+
+Route::post('/CreateXpTable', 'XpTableController@create');
+
+Route::get('/EditXpTable', 'XpTableController@edit');
+
+
+/*Xp*/
+Route::get('/Xp', 'XpController@index');
+
+Route::post('/CreateXp', 'XpController@create');
+
+Route::get('/EditXp', 'XpController@edit');
+
+
+/*User*/
+Route::get('/User', 'UserController@index');
