@@ -39,7 +39,18 @@ class XpTbController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // valider les données
+        $validation = $request->validate([
+            'Skillname' => 'required|integer|min:1'
+        ]);
+
+        // Ajouter l'item
+        $XpTb = new XpTb();
+        $XpTb->name = $request->post('Skillname');
+        $XpTb->save();
+
+        // Retourner en arriere
+        return redirect()->back();
     }
 
     /**

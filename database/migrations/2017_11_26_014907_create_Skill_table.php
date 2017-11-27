@@ -17,6 +17,7 @@ class CreateSkillTable extends Migration
             $table->increments('id');
             $table->integer('id_XpTable')->reference('id')->on('Competences');
             $table->integer('nameSkill');
+            $table->timestamps();
         });
     }
 

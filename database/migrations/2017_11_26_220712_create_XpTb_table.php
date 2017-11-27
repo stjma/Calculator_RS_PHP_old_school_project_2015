@@ -16,6 +16,7 @@ class CreateXpTbTable extends Migration
         Schema::create('xp_tbs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
     }
 
