@@ -71,25 +71,18 @@
         </div>
     </nav>
 
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href='/competence'>competence</a></li>
+                <li><a href='/skill'>skill</a></li>
+                <li><a href='/xpTb'>xp table</a></li>
+                <li> <a href='/xp'>xp</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-        <li class="nav navbar-nav">
-            <a href='/competence'>competence</a>
-        </li>
 
-        <li>
-            <a href='/skill'>skill</a>
-        </li>
-
-        <li>
-            <a href='/xpTb'>xp table</a>
-        </li>
-
-        <li>
-            <a href='/xp'>xp</a>
-        </li>
-    </div>
-    
     @yield('content')
 </div>
 

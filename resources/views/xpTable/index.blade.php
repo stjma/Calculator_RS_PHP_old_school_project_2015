@@ -5,6 +5,7 @@
           class="form-inline" role="form">
         {{ csrf_field() }}
 
+        <label>{{ __('Name')}}</label>
         <div class="form-group">
             <input type="text" class="form-control" name="Skillname">
         </div>
