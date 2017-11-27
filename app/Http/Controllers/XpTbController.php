@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\XpTb;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class XpTbController extends Controller
 {
@@ -41,7 +42,7 @@ class XpTbController extends Controller
     {
         // valider les données
         $validation = $request->validate([
-            'Skillname' => 'required|integer|min:1'
+            'Skillname' => 'required'
         ]);
 
         // Ajouter l'item
@@ -68,11 +69,12 @@ class XpTbController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        //
+       //
     }
 
     /**
@@ -84,7 +86,11 @@ class XpTbController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('xp_tbs')
+            ->where('id', $id)
+            ->update(['name' => $request->post('NameXpTable')]);
+
+        return redirect()->back();
     }
 
     /**

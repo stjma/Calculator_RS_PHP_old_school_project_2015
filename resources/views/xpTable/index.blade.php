@@ -21,14 +21,39 @@
             <th></th>
         </tr>
         </thead>
-    @foreach ($ListXpTable as $XpTable)
+        @foreach ($ListXpTable as $XpTable)
             <tbody>
+
             <tr>
                 <td>{{ $XpTable->name }}</td>
-                <td>{{ __('Detail')}}</td>
+
+                <td>
+                    <button type="button" class="btn btn-info"
+                            data-toggle="collapse" href="#collapse{{ $XpTable->id}}">Modifier
+                    </button>
+                </td>
+
+                <td>
+                    <a href='/xp/{{ $XpTable->id}}'>Detail</a>
+                    <a href='/xp'>Detail2</a>
+                </td>
+            </tr>
+            <tr id=collapse{{ $XpTable->id}} class="collapse">
+                <td colspan="3" align="center">
+
+                    <form action="/xpTb/{{ $XpTable->id}}" method="post">
+                    {{ csrf_field() }}
+                    <div>
+                        {{ __('Name')}}
+
+                        <input type="text" name="NameXpTable" value={{$XpTable->name }}>
+                        <button type="submit" class="btn btn-info">Sauvegarder</button>
+                    </div>
+                    </form>
+                </td>
             </tr>
             </tbody>
 
-    @endforeach
+        @endforeach
     </table>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\XpTb;
 use App\Xp;
 use Illuminate\Http\Request;
 
@@ -14,20 +15,25 @@ class XpController extends Controller
      */
     public function index($id = null)
     {
+        $listsXp = XpTb::get();
         if(!$id){
+            $id = 1;
             $lists = Xp::get();
 
             return view('xp.index', [
-                'ListXp' => $lists
+                'ListXp' => $lists,
+                'ListXpTable' => $listsXp
             ]);
         }
 
-        $lists = Xp::get()->where('id_XpTable' . '=' . $id);
+        $lists = Xp::get()->where('id_XpTable', '=', $id);
 
         return view('xp.index', [
-            'ListXp' => $lists
+            'ListXp' => $lists,
+            'ListXpTable' => $listsXp
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -47,7 +53,21 @@ class XpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // valider les données
+        $validation = $request->validate([
+            'lvl' => 'required',
+            'xps' => 'required',
+            'dif' => 'required',
+            'name' => 'required'
+        ]);
+
+        // Ajouter l'item
+        $XpTb = new XpTb();
+        $XpTb->name = $request->post('Skillname');
+        $XpTb->save();
+
+        // Retourner en arriere
+        return redirect()->back();
     }
 
     /**
