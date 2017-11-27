@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Skill;
 use App\Competence;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompetenceController extends Controller
 {
@@ -50,7 +52,20 @@ class CompetenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // valider les données
+        $validation = $request->validate([
+            'name' => 'required',
+        ]);
+
+        // Ajouter l'item
+        $Competence = new Competence();
+        $Competence->name = $request->post('name');
+        $Competence->xp = $request->post('xp');
+        $Competence->id_skill = $request->post('id_skill');
+        $Competence->save();
+
+        // Retourner en arriere
+        return redirect()->back();
     }
 
     /**
@@ -72,7 +87,7 @@ class CompetenceController extends Controller
      */
     public function edit($id)
     {
-        //
+       //
     }
 
     /**
@@ -84,7 +99,19 @@ class CompetenceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('competences')
+            ->where('id', $id)
+            ->update(['name' => $request->post('name')]);
+
+        DB::table('competences')
+            ->where('id', $id)
+            ->update(['xp' => $request->post('xp')]);
+
+        DB::table('competences')
+            ->where('id', $id)
+            ->update(['id_skill' => $request->post('table')]);
+
+        return redirect()->back();
     }
 
     /**

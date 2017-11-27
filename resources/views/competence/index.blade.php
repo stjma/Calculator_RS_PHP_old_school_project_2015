@@ -2,17 +2,20 @@
 
 @section('content')
 
-    <form action="/skill" method="post"
+    <form action="/competence" method="post"
           class="form-inline" role="form">
         {{ csrf_field() }}
 
         <div class="form-group">
+
             <label>{{ __('name')}}</label>
             <input type="text" name="name">
 
             <label>{{ __('xp')}}</label>
-            <select name="xp">
+            <input type="text" name="xp">
 
+            <label>{{ __('id_skill')}}</label>
+            <select name="id_skill">
                 @foreach($listSkill as $ls)
                     <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
                 @endforeach
@@ -33,6 +36,10 @@
                 {{ __('xp')}}
             </th>
 
+            <th>
+                {{ __('skill')}}
+            </th>
+
             <th></th>
         </tr>
         </thead>
@@ -43,9 +50,11 @@
 
                 <td>{{ $LSC->name }}</td>
 
+                <td>{{ $LSC->xp }}</td>
+
                 <td>
                     @foreach($listSkill as $ls)
-                        @if($LSC->id_XpTable == $ls->id)
+                        @if($LSC->id_skill == $ls->id)
                             {{$ls->nameSkill}}
                         @endif
                     @endforeach
@@ -61,25 +70,25 @@
             <tr id=collapse{{ $LSC->id}} class="collapse">
                 <td colspan="5" align="center">
 
-                    <form action="/skill/{{$LSC->id}}" method="post">
+                    <form action="/competence/{{$LSC->id}}" method="post">
                         {{ csrf_field() }}
                         <div>
 
                             <label> {{ __('Name')}}</label>
-                            <input type="text" name="dif" value={{$LSC->name }}>
+                            <input type="text" name="name" value={{$LSC->name }}>
 
-                            <label> {{ __('Name')}}</label>
-                            <input type="text" name="dif" value={{$LSC->xp }}>
+                            <label> {{ __('xp')}}</label>
+                            <input type="text" name="xp" value={{$LSC->xp }}>
 
                             <label>{{ __('skillName')}}</label>
-                            <select name="name">
+                            <select name="table">
                                 @foreach($listSkill as $ls)
 
                                     @if($LSC->id_skill == $ls->id)
                                         <option value="{{$ls->id}}" selected>{{$ls->nameSkill}}</option>
                                     @endif
 
-                                    @if($LSC->id_XpTable != $ls->id)
+                                    @if($LSC->id_skill != $ls->id)
                                         <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
                                     @endif
 
