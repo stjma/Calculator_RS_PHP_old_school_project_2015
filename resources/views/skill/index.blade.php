@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.Admin')
 
 @section('content')
 
@@ -53,6 +53,9 @@
                     </button>
                 </td>
 
+                <td>
+                    <a href='/competence/{{ $LSkill->id}}'>Detail</a>
+                </td>
             </tr>
             <tr id=collapse{{ $LSkill->id}} class="collapse">
                 <td colspan="3" align="center">
