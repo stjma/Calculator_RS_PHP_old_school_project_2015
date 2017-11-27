@@ -62,9 +62,12 @@ class XpController extends Controller
         ]);
 
         // Ajouter l'item
-        $XpTb = new XpTb();
-        $XpTb->name = $request->post('Skillname');
-        $XpTb->save();
+        $Xp = new Xp();
+        $Xp->lvl = $request->post('lvl');
+        $Xp->xp = $request->post('xps');
+        $Xp->dif = $request->post('dif');
+        $Xp->id_XpTable = $request->post('name');
+        $Xp->save();
 
         // Retourner en arriere
         return redirect()->back();
