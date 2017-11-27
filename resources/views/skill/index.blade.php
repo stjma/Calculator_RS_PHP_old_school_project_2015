@@ -11,7 +11,8 @@
             <input type="text" name="name">
 
             <label>{{ __('name')}}</label>
-            <select name="name">
+
+            <select name="table">
                 @foreach($ListXpTable as $LXpTable)
                     <option value="{{$LXpTable->id}}">{{$LXpTable->name}}</option>
                 @endforeach
@@ -36,7 +37,7 @@
 
             <tr>
 
-                <td>{{ $LSkill->name }}</td>
+                <td>{{ $LSkill->nameSkill }}</td>
 
                 <td>
                     @foreach($ListXpTable as $LXpTable)
@@ -54,18 +55,18 @@
 
             </tr>
             <tr id=collapse{{ $LSkill->id}} class="collapse">
-                <td colspan="5" align="center">
+                <td colspan="3" align="center">
 
                     <form action="/skill/{{ $LSkill->id}}" method="post">
                         {{ csrf_field() }}
                         <div>
 
                             <label> {{ __('Name')}}</label>
-                            <input type="text" name="name" value={{$LSkill->name }}>
+                            <input type="text" name="name" value={{$LSkill->nameSkill }}>
 
 
                             <label>{{ __('skillName')}}</label>
-                            <select name="name">
+                            <select name="table">
                                 @foreach($ListXpTable as $LXpTable)
 
                                     @if($LSkill->id_XpTable == $LXpTable->id)

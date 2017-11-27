@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\XpTb;
 use App\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SkillController extends Controller
 {
@@ -43,7 +44,19 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // valider les données
+        $validation = $request->validate([
+            'name' => 'required',
+        ]);
+
+        // Ajouter l'item
+        $Skill = new Skill();
+        $Skill->nameSkill = $request->post('name');
+        $Skill->id_XpTable = $request->post('table');
+        $Skill->save();
+
+        // Retourner en arriere
+        return redirect()->back();
     }
 
     /**
@@ -77,7 +90,15 @@ class SkillController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('skills')
+            ->where('id', $id)
+            ->update(['id_XpTable' => $request->post('table')]);
+
+        DB::table('skills')
+            ->where('id', $id)
+            ->update(['nameSkill' => $request->post('name')]);
+
+        return redirect()->back();
     }
 
     /**
