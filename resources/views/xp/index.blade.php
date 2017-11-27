@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+
     <form action="/xp" method="post"
           class="form-inline" role="form">
         {{ csrf_field() }}
@@ -83,13 +83,13 @@
                             {{ __('Name')}}
 
                             <label>{{ __('lvl')}}</label>
-                            <input type="text" name="lvl" value={{$LXp->name }}>
+                            <input type="text" name="lvl" value={{$LXp->lvl }}>
 
                             <label>{{ __('xps')}}</label>
-                            <input type="text" name="xps" value={{$LXp->name }}>
+                            <input type="text" name="xps" value={{$LXp->xp }}>
 
                             <label>{{ __('dif')}}</label>
-                            <input type="text" name="dif" value={{$LXp->name }}>
+                            <input type="text" name="dif" value={{$LXp->dif }}>
 
 
                             <label>{{ __('name')}}</label>

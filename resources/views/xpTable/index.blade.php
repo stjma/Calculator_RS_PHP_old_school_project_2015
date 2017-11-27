@@ -35,7 +35,6 @@
 
                 <td>
                     <a href='/xp/{{ $XpTable->id}}'>Detail</a>
-                    <a href='/xp'>Detail2</a>
                 </td>
             </tr>
             <tr id=collapse{{ $XpTable->id}} class="collapse">
