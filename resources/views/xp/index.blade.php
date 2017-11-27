@@ -77,7 +77,7 @@
             <tr id=collapse{{ $LXp->id}} class="collapse">
                 <td colspan="5" align="center">
 
-                    <form action="/xpTb/{{ $LXp->id}}" method="post">
+                    <form action="/xp/{{ $LXp->id}}" method="post">
                         {{ csrf_field() }}
                         <div>
                             {{ __('Name')}}

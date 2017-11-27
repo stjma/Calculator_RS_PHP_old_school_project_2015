@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\XpTb;
 use App\Xp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class XpController extends Controller
 {
@@ -104,7 +105,23 @@ class XpController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('xps')
+            ->where('id', $id)
+            ->update(['lvl' => $request->post('lvl')]);
+
+        DB::table('xps')
+            ->where('id', $id)
+            ->update(['xp' => $request->post('xps')]);
+
+        DB::table('xps')
+            ->where('id', $id)
+            ->update(['dif' => $request->post('dif')]);
+
+        DB::table('xps')
+            ->where('id', $id)
+            ->update(['id_XpTable' => $request->post('name')]);
+
+        return redirect()->back();
     }
 
     /**

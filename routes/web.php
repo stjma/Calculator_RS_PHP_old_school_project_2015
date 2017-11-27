@@ -60,7 +60,7 @@ Route::get('/xp/{id?}', 'XpController@index');
 
 Route::post('/xp', 'XpController@store');
 
-Route::get('/xp/{id}', 'XpController@update');
+Route::post('/xp/{id}', 'XpController@update');
 
 
 /*User*/
