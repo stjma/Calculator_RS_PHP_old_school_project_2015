@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\XpTb;
 use App\Skill;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,13 @@ class SkillController extends Controller
      */
     public function index()
     {
+        $listsXp = XpTb::get();
+
         $lists = Skill::get();
 
         return view('Skill.index', [
-            'ListSkill' => $lists
+            'ListSkill' => $lists,
+            'ListXpTable' => $listsXp
         ]);
     }
 

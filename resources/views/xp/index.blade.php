@@ -80,7 +80,7 @@
                     <form action="/xp/{{ $LXp->id}}" method="post">
                         {{ csrf_field() }}
                         <div>
-                            {{ __('Name')}}
+
 
                             <label>{{ __('lvl')}}</label>
                             <input type="text" name="lvl" value={{$LXp->lvl }}>

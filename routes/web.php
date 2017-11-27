@@ -31,7 +31,7 @@ Route::get('/skill', 'SkillController@index');
 
 Route::post('/skill', 'SkillController@store');
 
-Route::get('/skill/{id}', 'SkillController@update');
+Route::post('/skill/{id}', 'SkillController@update');
 
 
 
@@ -40,7 +40,7 @@ Route::get('/competence/{id?}', 'CompetenceController@index');
 
 Route::post('/competence', 'CompetenceController@store');
 
-Route::get('/competence/{id}', 'CompetenceController@update');
+Route::post('/competence/{id}', 'CompetenceController@update');
 
 Route::delete('/competence/{id}', 'CompetenceController@destroy');
 

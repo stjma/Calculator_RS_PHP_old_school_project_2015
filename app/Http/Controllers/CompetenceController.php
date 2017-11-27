@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Skill;
 use App\Competence;
 use Illuminate\Http\Request;
 
@@ -14,18 +14,21 @@ class CompetenceController extends Controller
      */
     public function index($id = null)
     {
+        $listSkill = Skill::get();
         if(!$id){
             $lists = Competence::get();
 
-            return view('Skill.index', [
-                'ListSkill' => $lists
+            return view('competence.index', [
+                'ListSC' => $lists,
+                'listSkill' => $listSkill
             ]);
         }
 
-        $lists = Competence::get()->where('id_skill' . '=' . $id);
+        $lists = Competence::get()->where('id_skill', '=', $id);
 
-        return view('Skill.index', [
-            'ListSkill' => $lists
+        return view('competence.index', [
+            'ListSC' => $lists,
+            'listSkill' => $listSkill
         ]);
     }
 
