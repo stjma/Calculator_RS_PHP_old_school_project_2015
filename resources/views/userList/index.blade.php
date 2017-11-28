@@ -29,7 +29,7 @@
                     </td>
 
                     <td>
-                        <a href='/calculator/{{ $LSkill->id}}' class="btn btn-info">Detail</a>
+                        <a href='/calculator/{{ $LSkill->id}}/{{ $LSkill->id_XpTable}}' class="btn btn-info">Detail</a>
                     </td>
                 </tr>
                 </tbody>

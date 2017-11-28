@@ -71,6 +71,6 @@ Route::get('/userList', 'UserListController@index');
 
 
 /*Calculator*/
-Route::get('/calculator/{id}', 'CalculatorController@index');
+Route::get('/calculator/{id}/{skill}', 'CalculatorController@index');
 
 Route::post('/show/{id}', 'CalculatorController@show');

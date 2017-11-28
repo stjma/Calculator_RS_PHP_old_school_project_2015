@@ -9,14 +9,18 @@
 
             <div class="form-group">
 
-                <label>{{ __('xp')}}</label>
-                <input type="text" name="name">
-
                 <label>{{ __('lvl')}}</label>
+                <input type="text" name="lvl">
+
+                <label>{{ __('xp')}}</label>
                 <input type="text" name="xp">
             </div>
 
             <button type="submit" class="btn btn-primary">{{ __('Calculator')}}</button>
+
+            @if(Session::has('erreurForm'))
+                {{ (int)Session::get('erreurForm') }}
+            @endif
         </form>
 
 
@@ -57,9 +61,10 @@
                     </td>
 
                     <td>
-
                         @if(Session::has('calculateur'))
                             {{ (int)Session::get('calculateur') }}
+
+
                         @endif
                     </td>
                 </tr>

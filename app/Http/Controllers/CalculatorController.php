@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Xp;
 use App\Skill;
 use App\Competence;
 use Illuminate\Http\Request;
@@ -12,20 +12,20 @@ class CalculatorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $id)
+    public function index($id, $skill)
     {
 
         $listSkill = Skill::get();
+
         $lists = Competence::get()->where('id_skill', '=', $id);
 
         return view('calculator.index', [
             'ListSC' => $lists,
             'listSkill' => $listSkill,
-            'listId' => $id,
+            'listId' => $skill,
         ]);
     }
 
@@ -52,15 +52,31 @@ class CalculatorController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * @param Request $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $test = 20;
+        //, 'and' , 'lvl', '=', $request->post('lvl')
+        //'id_XpTable', '=', $id
 
-        return Redirect()->back()->withInput()->with("calculateur", $test);
+        $xpLvl = Xp::get()->where('lvl', '=', $request->post('lvl'))->where('id_XpTable', '=', $id);
+
+        $xpVoulu = 0;
+        foreach($xpLvl as $xp){
+            $xpVoulu = $xp->xp;
+        }
+
+        //$XpVoulu = $xpLvl->xp;
+
+        //$dif = $request->post('xp') - $XpVoulu;
+
+        //Xps
+        //erreurForm
+
+
+        return Redirect()->back()->withInput()->with("calculateur", $xpVoulu);
 
     }
 
