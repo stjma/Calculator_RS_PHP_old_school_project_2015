@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/user') }}">
                         {{ __('userLayout.Runescapecalculator') }}
                     </a>
                 </div>
@@ -38,7 +38,7 @@
                     <ul class="nav navbar-nav">
                             <li><a href='/user'>{{ __('userLayout.home') }}</a></li>
                             <li><a href='/userList'>{{ __('userLayout.calculator') }}</a></li>
-                            <li><a href='/xpTb'>{{ __('userLayout.admin') }}</a></li>
+                            <li><a href='/skill'>{{ __('userLayout.admin') }}</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
