@@ -70,16 +70,17 @@ class CalculatorController extends Controller
         $lvl = $request->post('lvl');
         $xp = $request->post('xp');
 
+
         $xpLvl = Xp::get()->where('lvl', '=', $lvl)->where('id_XpTable', '=', $id);
+
 
         $xpVoulu = 0;
         foreach($xpLvl as $xp1){
             $xpVoulu = $xp1->xp;
         }
 
+
         $maxXp = DB::table('xps')->max('xp');
-
-
 
         if($xp >= $maxXp){
             return Redirect()->back()->withInput()->with("erreurForm", "lvl Trop grand");
@@ -100,19 +101,9 @@ class CalculatorController extends Controller
             return Redirect()->back()->withInput()->with("erreurForm", "Xp trop grand");
         }
 
-
         $difXp = $xp - $xpVoulu;
 
-        //$XpVoulu = $xpLvl->xp;
-
-        //$dif = $request->post('xp') - $XpVoulu;
-
-        //Xps
-        //erreurForm
-
-
         return Redirect()->back()->withInput()->with("calculateur", $difXp);
-
     }
 
     /**
