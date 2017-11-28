@@ -65,4 +65,8 @@ Route::post('/xp/{id}', 'XpController@update');
 
 /*User*/
 Route::get('/user', 'UserController@index');
-Route::get('/calculator', 'UserController@show');
+
+/*UserList*/
+
+/*Calculator*/
+Route::get('/calculator/{id}', 'UserController@show');

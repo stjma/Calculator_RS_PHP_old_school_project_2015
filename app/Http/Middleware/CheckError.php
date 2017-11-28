@@ -2,10 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Foundation\Testing\HttpException;
-use Mockery\Exception;
-use Symfony\Component\Debug\ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class CheckError
 {
@@ -13,11 +10,19 @@ class CheckError
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param  Exception $exception
+     * @return \Illuminate\Http\Response
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Exception $exception)
     {
-        return $next($request);
+        if($exception instanceof MethodNotAllowedHttpException) {
+            //return redirect('home');
+            return response()->json([
+                'success' => 0,
+                'message' => 'Method is not allowed'
+            ], 405);
+        }
+
+        return parent::render($request, $exception);
     }
 }
