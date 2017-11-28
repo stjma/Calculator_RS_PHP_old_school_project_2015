@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\XpTb;
+use App\Skill;
 
 class UserListController extends Controller
 {
@@ -13,7 +15,13 @@ class UserListController extends Controller
      */
     public function index()
     {
-        //
+        $listsXp = XpTb::get();
+        $lists = Skill::get();
+
+        return view('UserList.index', [
+            'ListSkill' => $lists,
+            'ListXpTable' => $listsXp
+        ]);
     }
 
     /**

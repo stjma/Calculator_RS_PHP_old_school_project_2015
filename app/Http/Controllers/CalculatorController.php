@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Skill;
+use App\Competence;
 use Illuminate\Http\Request;
 
 class CalculatorController extends Controller
@@ -9,11 +12,21 @@ class CalculatorController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $id)
     {
-        //
+
+        $listSkill = Skill::get();
+        $lists = Competence::get()->where('id_skill', '=', $id);
+
+        return view('calculator.index', [
+            'ListSC' => $lists,
+            'listSkill' => $listSkill,
+            'listId' => $id,
+        ]);
     }
 
     /**
@@ -45,7 +58,10 @@ class CalculatorController extends Controller
      */
     public function show($id)
     {
-        //
+        $test = 20;
+
+        return Redirect()->back()->withInput()->with("calculateur", $test);
+
     }
 
     /**

@@ -57,7 +57,6 @@ Route::post('/xpTb/{id}', 'XpTbController@update');
 /*Xp*/
 Route::get('/xp/{id?}', 'XpController@index');
 
-
 Route::post('/xp', 'XpController@store');
 
 Route::post('/xp/{id}', 'XpController@update');
@@ -66,7 +65,12 @@ Route::post('/xp/{id}', 'XpController@update');
 /*User*/
 Route::get('/user', 'UserController@index');
 
+
 /*UserList*/
+Route::get('/userList', 'UserListController@index');
+
 
 /*Calculator*/
-Route::get('/calculator/{id}', 'UserController@show');
+Route::get('/calculator/{id}', 'CalculatorController@index');
+
+Route::post('/show/{id}', 'CalculatorController@show');
