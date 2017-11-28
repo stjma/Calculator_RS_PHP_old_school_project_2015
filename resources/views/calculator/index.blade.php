@@ -19,7 +19,7 @@
             <button type="submit" class="btn btn-primary">{{ __('Calculator')}}</button>
 
             @if(Session::has('erreurForm'))
-                {{ (int)Session::get('erreurForm') }}
+                {{ (string)Session::get('erreurForm') }}
             @endif
         </form>
 

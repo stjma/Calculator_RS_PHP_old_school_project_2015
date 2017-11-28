@@ -6,6 +6,7 @@ use App\Xp;
 use App\Skill;
 use App\Competence;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CalculatorController extends Controller
 {
@@ -58,15 +59,49 @@ class CalculatorController extends Controller
      */
     public function show(Request $request, $id)
     {
-        //, 'and' , 'lvl', '=', $request->post('lvl')
-        //'id_XpTable', '=', $id
 
-        $xpLvl = Xp::get()->where('lvl', '=', $request->post('lvl'))->where('id_XpTable', '=', $id);
+        // valider les données
+        $validation = $request->validate([
+            'lvl' => 'required|numeric',
+            'xp' => 'required|numeric',
+        ]);
+
+
+        $lvl = $request->post('lvl');
+        $xp = $request->post('xp');
+
+        $xpLvl = Xp::get()->where('lvl', '=', $lvl)->where('id_XpTable', '=', $id);
 
         $xpVoulu = 0;
-        foreach($xpLvl as $xp){
-            $xpVoulu = $xp->xp;
+        foreach($xpLvl as $xp1){
+            $xpVoulu = $xp1->xp;
         }
+
+        $maxXp = DB::table('xps')->max('xp');
+
+
+
+        if($xp >= $maxXp){
+            return Redirect()->back()->withInput()->with("erreurForm", "lvl Trop grand");
+        }
+
+        if($xp <= $xpVoulu){
+            return Redirect()->back()->withInput()->with("erreurForm", "lvl trop grand pour xp");
+        }
+
+        $lvlMax = Xp::get()->where('lvl', '=', $lvl);
+
+        $XpTropGrand = 0;
+        foreach($lvlMax as $xp2){
+            $XpTropGrand = $xp2->lvl;
+        }
+
+        if($XpTropGrand == 0){
+            return Redirect()->back()->withInput()->with("erreurForm", "Xp trop grand");
+        }
+
+
+        $difXp = $xp - $xpVoulu;
 
         //$XpVoulu = $xpLvl->xp;
 
@@ -76,7 +111,7 @@ class CalculatorController extends Controller
         //erreurForm
 
 
-        return Redirect()->back()->withInput()->with("calculateur", $xpVoulu);
+        return Redirect()->back()->withInput()->with("calculateur", $difXp);
 
     }
 
