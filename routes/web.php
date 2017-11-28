@@ -74,3 +74,8 @@ Route::get('/userList', 'UserListController@index');
 Route::get('/calculator/{id}/{skill}', 'CalculatorController@index');
 
 Route::post('/show/{id}', 'CalculatorController@show');
+
+
+
+
+Route::Post('/language', 'languageSwitcher@index');

@@ -45,6 +45,20 @@
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+
+                            <li>
+                                <form action="/language" method="post">
+                                    <select name="txtLanguage">
+                                        <option value="en">English</option>
+                                        <option value="fr">Francais</option>
+                                    </select>
+                                    {{csrf_field()}}
+                                    <input type="submit" value="Submit">
+                                </form>
+                            </li>
+
+                        <li>{{(string)Session::get('language')}}</li>
+                        <li>{{__('indexUser.nom')}}</li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
