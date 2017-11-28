@@ -1,106 +1,109 @@
 @extends('layouts.Admin')
 
 @section('content')
+    <div class="container">
+        <form action="/competence" method="post"
+              class="form-inline" role="form">
+            {{ csrf_field() }}
 
-    <form action="/competence" method="post"
-          class="form-inline" role="form">
-        {{ csrf_field() }}
+            <div class="form-group">
 
-        <div class="form-group">
+                <label>{{ __('name')}}</label>
+                <input type="text" name="name">
 
-            <label>{{ __('name')}}</label>
-            <input type="text" name="name">
+                <label>{{ __('xp')}}</label>
+                <input type="text" name="xp">
 
-            <label>{{ __('xp')}}</label>
-            <input type="text" name="xp">
-
-            <label>{{ __('id_skill')}}</label>
-            <select name="id_skill">
-                @foreach($listSkill as $ls)
-                    <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">{{ __('Add')}}</button>
-    </form>
-    <table class="table">
-        <thead>
-        <tr class="header">
-
-            <th>
-                {{ __('name')}}
-            </th>
-
-            <th>
-                {{ __('xp')}}
-            </th>
-
-            <th>
-                {{ __('skill')}}
-            </th>
-
-            <th></th>
-        </tr>
-        </thead>
-        @foreach ($ListSC as $LSC)
-            <tbody>
-
-            <tr>
-
-                <td>{{ $LSC->name }}</td>
-
-                <td>{{ $LSC->xp }}</td>
-
-                <td>
+                <label>{{ __('id_skill')}}</label>
+                <select name="id_skill">
                     @foreach($listSkill as $ls)
-                        @if($LSC->id_skill == $ls->id)
-                            {{$ls->nameSkill}}
-                        @endif
+                        <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
                     @endforeach
-                </td>
+                </select>
+            </div>
 
-                <td>
-                    <button type="button" class="btn btn-info"
-                            data-toggle="collapse" href="#collapse{{ $LSC->id}}">Modifier
-                    </button>
-                </td>
+            <button type="submit" class="btn btn-primary">{{ __('Add')}}</button>
+        </form>
 
+
+        <table class="table">
+            <thead>
+            <tr class="header">
+
+                <th>
+                    {{ __('name')}}
+                </th>
+
+                <th>
+                    {{ __('xp')}}
+                </th>
+
+                <th>
+                    {{ __('skill')}}
+                </th>
+
+                <th></th>
             </tr>
-            <tr id=collapse{{ $LSC->id}} class="collapse">
-                <td colspan="5" align="center">
+            </thead>
+            @foreach ($ListSC as $LSC)
+                <tbody>
 
-                    <form action="/competence/{{$LSC->id}}" method="post">
-                        {{ csrf_field() }}
-                        <div>
+                <tr>
 
-                            <label> {{ __('Name')}}</label>
-                            <input type="text" name="name" value={{$LSC->name }}>
+                    <td>{{ $LSC->name }}</td>
 
-                            <label> {{ __('xp')}}</label>
-                            <input type="text" name="xp" value={{$LSC->xp }}>
+                    <td>{{ $LSC->xp }}</td>
 
-                            <label>{{ __('skillName')}}</label>
-                            <select name="table">
-                                @foreach($listSkill as $ls)
+                    <td>
+                        @foreach($listSkill as $ls)
+                            @if($LSC->id_skill == $ls->id)
+                                {{$ls->nameSkill}}
+                            @endif
+                        @endforeach
+                    </td>
 
-                                    @if($LSC->id_skill == $ls->id)
-                                        <option value="{{$ls->id}}" selected>{{$ls->nameSkill}}</option>
-                                    @endif
+                    <td>
+                        <button type="button" class="btn btn-info"
+                                data-toggle="collapse" href="#collapse{{ $LSC->id}}">Modifier
+                        </button>
+                    </td>
 
-                                    @if($LSC->id_skill != $ls->id)
-                                        <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
-                                    @endif
+                </tr>
+                <tr id=collapse{{ $LSC->id}} class="collapse">
+                    <td colspan="5" align="center">
 
-                                @endforeach
-                            </select>
-                            <button type="submit" class="btn btn-info">Sauvegarder</button>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-            </tbody>
+                        <form action="/competence/{{$LSC->id}}" method="post">
+                            {{ csrf_field() }}
+                            <div>
 
-        @endforeach
-    </table>
+                                <label> {{ __('Name')}}</label>
+                                <input type="text" name="name" value={{$LSC->name }}>
+
+                                <label> {{ __('xp')}}</label>
+                                <input type="text" name="xp" value={{$LSC->xp }}>
+
+                                <label>{{ __('skillName')}}</label>
+                                <select name="table">
+                                    @foreach($listSkill as $ls)
+
+                                        @if($LSC->id_skill == $ls->id)
+                                            <option value="{{$ls->id}}" selected>{{$ls->nameSkill}}</option>
+                                        @endif
+
+                                        @if($LSC->id_skill != $ls->id)
+                                            <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
+                                        @endif
+
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-info">Sauvegarder</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+
+            @endforeach
+        </table>
+    </div>
 @endsection

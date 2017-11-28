@@ -70,7 +70,7 @@
             </div>
         </div>
     </nav>
-
+    <div class="container">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -81,6 +81,7 @@
             </ul>
         </div>
     </nav>
+    </div>
 
 
     @yield('content')
