@@ -62,7 +62,7 @@
 
                     <td>
                         @if(Session::has('calculateur'))
-                            {{ (int)Session::get('calculateur') }}
+                            {{ (int)Session::get('calculateur') / $LSC->xp }}
 
 
                         @endif
