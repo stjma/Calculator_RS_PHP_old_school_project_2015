@@ -31,7 +31,7 @@ Route::get('/skill', 'SkillController@index');
 
 Route::post('/skill', 'SkillController@store');
 
-Route::post('/skill/{id}', 'SkillController@update');
+Route::post('/skill/{id}', 'SkillController@update')->name('checkError');;
 
 
 

@@ -58,7 +58,7 @@
                 </td>
             </tr>
             <tr id=collapse{{ $LSkill->id}} class="collapse">
-                <td colspan="3" align="center">
+                <td colspan="4" align="center">
 
                     <form action="/skill/{{ $LSkill->id}}" method="post">
                         {{ csrf_field() }}
