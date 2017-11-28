@@ -29,22 +29,35 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ __('adminLayout.Runescapecalculator') }}
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    &nbsp; <li><a href='/user'>{{ __('adminLayout.home') }}</a></li>
+                    <li><a href='/userList'>{{ __('adminLayout.calculator') }}</a></li>
+                    <li><a href='/xpTb'>{{ __('adminLayout.admin') }}</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('login') }}">{{ __('adminLayout.login') }}</a></li>
+                        <li><a href="{{ route('register') }}">{{ __('adminLayout.register') }}</a></li>
+
+                        <li>
+                            <form action="/language" method="post">
+                                <select name="txtLanguage">
+                                    <option value="en">{{ __('adminLayout.en') }}</option>
+                                    <option value="fr">{{ __('adminLayout.fr') }}</option>
+                                </select>
+                                {{csrf_field()}}
+                                <input type="submit" value="{{ __('adminLayout.change') }}">
+                            </form>
+                        </li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -56,7 +69,7 @@
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            {{ __('adminLayout.logout') }}">
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -74,10 +87,10 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li><a href='/competence'>competence</a></li>
-                <li><a href='/skill'>skill</a></li>
-                <li><a href='/xpTb'>xp table</a></li>
-                <li> <a href='/xp'>xp</a></li>
+                <li><a href='/competence'>{{ __('adminLayout.competence') }}</a></li>
+                <li><a href='/skill'>{{ __('adminLayout.skill') }}</a></li>
+                <li><a href='/xpTb'>{{ __('adminLayout.xpTb') }}</a></li>
+                <li> <a href='/xp'>{{ __('adminLayout.xp') }}</a></li>
             </ul>
         </div>
     </nav>

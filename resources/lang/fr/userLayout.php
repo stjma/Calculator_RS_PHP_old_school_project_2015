@@ -1,6 +1,5 @@
 <?php
 return [
-    'nom' => 'nom',
     'Runescapecalculator' => 'Calculateur RuneScape',
     'home' => 'Acceuil',
     'calculator' => 'Calculateur',

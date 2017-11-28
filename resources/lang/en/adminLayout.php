@@ -1,6 +1,6 @@
 <?php
 return [
-    'Runescapecalculator' => 'RuneScape Calculator',
+    'Runescapecalculator' => 'Calculateur RuneScape',
     'home' => 'Home',
     'calculator' => 'Calculator',
     'admin' => 'Admin',
@@ -10,5 +10,8 @@ return [
     'fr' => 'French',
     'change' => 'Change',
     'logout' => 'Logout',
-    //{{--<li>{{(string)Session::get('language')}}</li>--}}
+    'competence' => 'Competence',
+    'skill' => 'Skill',
+    'xpTb' => 'Xp table',
+    'xp' => 'Xp',
 ];
