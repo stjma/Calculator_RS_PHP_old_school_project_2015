@@ -77,5 +77,5 @@ Route::post('/show/{id}', 'CalculatorController@show');
 
 
 
-
+/*Middleware language*/
 Route::Post('/language', 'languageSwitcher@index');

@@ -29,36 +29,38 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ __('userLayout.Runescapecalculator') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                            <li><a href='/user'>{{ __('userLayout.home') }}</a></li>
+                            <li><a href='/userList'>{{ __('userLayout.calculator') }}</a></li>
+                            <li><a href='/xpTb'>{{ __('userLayout.admin') }}</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">{{ __('userLayout.login') }}</a></li>
+                            <li><a href="{{ route('register') }}">{{ __('userLayout.register') }}</a></li>
 
                             <li>
                                 <form action="/language" method="post">
                                     <select name="txtLanguage">
-                                        <option value="en">English</option>
-                                        <option value="fr">Francais</option>
+                                        <option value="en">{{ __('userLayout.en') }}</option>
+                                        <option value="fr">{{ __('userLayout.fr') }}</option>
                                     </select>
                                     {{csrf_field()}}
-                                    <input type="submit" value="Submit">
+                                    <input type="submit" value="{{ __('userLayout.change') }}">
                                 </form>
                             </li>
 
-                        <li>{{(string)Session::get('language')}}</li>
-                        <li>{{__('indexUser.nom')}}</li>
+
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -70,7 +72,8 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            {{ __('userLayout.logout') }}">
+                                            </form>
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
