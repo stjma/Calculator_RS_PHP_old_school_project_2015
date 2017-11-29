@@ -65,7 +65,6 @@ class Handler extends ExceptionHandler
 
         if($exception instanceof NotFoundHttpException)
         {
-
             $content = [
                 'title'=> 'Error NotFoundHttpException',
                 'body'=> $exception,
