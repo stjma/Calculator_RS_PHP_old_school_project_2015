@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
 
 
-        \App\Http\Middleware\LanguageSwitcher::class,
+
     ];
 
     /**
@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
 
             \App\Http\Middleware\LanguageSwitcher::class,
+            \App\Http\Middleware\CatchError::class,
         ],
 
         'api' => [

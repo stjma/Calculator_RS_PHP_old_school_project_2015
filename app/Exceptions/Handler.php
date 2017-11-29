@@ -6,11 +6,15 @@ use App\Mail\ErrorMail;
 use Mail;
 
 
+
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
+
+use Illuminate\Support\Facades\Session;
 
 
 class Handler extends ExceptionHandler
@@ -58,26 +62,34 @@ class Handler extends ExceptionHandler
     {
         if($exception instanceof MethodNotAllowedHttpException)
         {
-
+            $this->Error($exception,"MethodNotAllowedHttpException");
 
             return redirect()->back();
         }
 
         if($exception instanceof NotFoundHttpException)
         {
-            $content = [
-                'title'=> 'Error NotFoundHttpException',
-                'body'=> $exception,
+            $this->Error($exception,"NotFoundHttpException");
+
+            return redirect()->back();
+        }
+
+        $this->Error($exception, "Exception");
+
+        return redirect()->back();
+
+        //return parent::render($request, $exception);
+    }
+
+    private function Error($error,$title){
+        $content = [
+                'title'=> '$title',
+                'body'=> $error,
                 'button' => 'Click Here'
             ];
 
             $receiverAddress = 'test@gmail.com';
 
             Mail::to($receiverAddress)->send(new ErrorMail($content));
-
-            return redirect()->back();
-        }
-
-        return parent::render($request, $exception);
     }
 }
