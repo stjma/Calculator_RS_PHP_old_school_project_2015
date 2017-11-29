@@ -7,10 +7,10 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-                <label>{{ __('name')}}</label>
+                <label>{{ __('skill.name')}}</label>
                 <input type="text" name="name">
 
-                <label>{{ __('name')}}</label>
+                <label>{{ __('skill.table')}}</label>
 
                 <select name="table">
                     @foreach($ListXpTable as $LXpTable)
@@ -26,7 +26,11 @@
             <tr class="header">
 
                 <th>
-                    {{ __('name')}}
+                    {{ __('skill.name')}}
+                </th>
+
+                <th>
+                    {{ __('skill.table')}}
                 </th>
 
                 <th></th>
@@ -49,7 +53,7 @@
 
                     <td>
                         <button type="button" class="btn btn-info"
-                                data-toggle="collapse" href="#collapse{{ $LSkill->id}}">Modifier
+                                data-toggle="collapse" href="#collapse{{ $LSkill->id}}">  {{ __('skill.modify')}}
                         </button>
 
                         <a href='/competence/{{ $LSkill->id}}' class="btn btn-info">Detail</a>
@@ -63,11 +67,11 @@
                             {{ csrf_field() }}
                             <div>
 
-                                <label> {{ __('Name')}}</label>
+                                <label>{{ __('skill.name')}}</label>
                                 <input type="text" name="name" value={{$LSkill->nameSkill }}>
 
 
-                                <label>{{ __('skillName')}}</label>
+                                <label>{{ __('skill.table')}}</label>
                                 <select name="table">
                                     @foreach($ListXpTable as $LXpTable)
 
@@ -81,7 +85,7 @@
 
                                     @endforeach
                                 </select>
-                                <button type="submit" class="btn btn-info">Sauvegarder</button>
+                                <button type="submit" class="btn btn-info">{{ __('skill.save')}}</button>
                             </div>
                         </form>
                     </td>
