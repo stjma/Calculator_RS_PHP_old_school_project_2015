@@ -7,17 +7,17 @@
             {{ csrf_field() }}
 
             <div class="form-group">
-                <label>{{ __('lvl')}}</label>
+                <label>{{ __('xp.lvl')}}</label>
                 <input type="text" name="lvl">
 
-                <label>{{ __('xps')}}</label>
+                <label>{{ __('xp.xp')}}</label>
                 <input type="text" name="xps">
 
-                <label>{{ __('dif')}}</label>
+                <label>{{ __('xp.dif')}}</label>
                 <input type="text" name="dif">
 
 
-                <label>{{ __('name')}}</label>
+                <label>{{ __('xp.table')}}</label>
                 <select name="name">
                     @foreach($ListXpTable as $LXpTable)
                         <option value="{{$LXpTable->id}}">{{$LXpTable->name}}</option>
@@ -31,19 +31,19 @@
             <thead>
             <tr class="header">
                 <th>
-                    {{ __('lvl')}}
+                    {{ __('xp.lvl')}}
                 </th>
 
                 <th>
-                    {{ __('xps')}}
+                    {{ __('xp.xp')}}
                 </th>
 
                 <th>
-                    {{ __('dif')}}
+                    {{ __('xp.dif')}}
                 </th>
 
                 <th>
-                    {{ __('name')}}
+                    {{ __('xp.table')}}
                 </th>
 
                 <th></th>
@@ -69,7 +69,7 @@
 
                     <td>
                         <button type="button" class="btn btn-info"
-                                data-toggle="collapse" href="#collapse{{ $LXp->id}}">Modifier
+                                data-toggle="collapse" href="#collapse{{ $LXp->id}}"> {{ __('xp.modify')}}
                         </button>
                     </td>
 
@@ -82,17 +82,17 @@
                             <div>
 
 
-                                <label>{{ __('lvl')}}</label>
+                                <label>{{ __('xp.lvl')}}</label>
                                 <input type="text" name="lvl" value={{$LXp->lvl }}>
 
-                                <label>{{ __('xps')}}</label>
+                                <label>{{ __('xp.xp')}}</label>
                                 <input type="text" name="xps" value={{$LXp->xp }}>
 
-                                <label>{{ __('dif')}}</label>
+                                <label>{{ __('xp.dif')}}</label>
                                 <input type="text" name="dif" value={{$LXp->dif }}>
 
 
-                                <label>{{ __('name')}}</label>
+                                <label>{{ __('xp.table')}}</label>
                                 <select name="name">
                                     @foreach($ListXpTable as $LXpTable)
 
@@ -107,7 +107,7 @@
 
                                     @endforeach
                                 </select>
-                                <button type="submit" class="btn btn-info">Sauvegarder</button>
+                                <button type="submit" class="btn btn-info">{{ __('xp.save')}}</button>
                             </div>
                         </form>
                     </td>
