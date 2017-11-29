@@ -14,6 +14,7 @@ class CalculatorController extends Controller
      * Display a listing of the resource.
      *
      * @param $id
+     * @param $skill
      * @return \Illuminate\Http\Response
      */
     public function index($id, $skill)
@@ -66,19 +67,15 @@ class CalculatorController extends Controller
             'xp' => 'required|numeric',
         ]);
 
-
         $lvl = $request->post('lvl');
         $xp = $request->post('xp');
 
-
         $xpLvl = Xp::get()->where('lvl', '=', $lvl)->where('id_XpTable', '=', $id);
-
 
         $xpVoulu = 0;
         foreach($xpLvl as $xp1){
             $xpVoulu = $xp1->xp;
         }
-
 
         $maxXp = DB::table('xps')->max('xp');
 

@@ -7,11 +7,11 @@
             <tr class="header">
 
                 <th>
-                    {{ __('calculator.name')}}
+                    {{ __('userList.name')}}
                 </th>
 
                 <th>
-                    {{ __('calculator.competence')}}
+                    {{ __('userList.competence')}}
                 </th>
 
                 <th></th>
@@ -33,7 +33,7 @@
                     </td>
 
                     <td>
-                        <a href='/calculator/{{ $LSkill->id}}/{{ $LSkill->id_XpTable}}' class="btn btn-info">{{ __('calculator.detail')}}</a>
+                        <a href='/calculator/{{ $LSkill->id}}/{{ $LSkill->id_XpTable}}' class="btn btn-info">{{ __('userList.detail')}}</a>
                     </td>
                 </tr>
                 </tbody>

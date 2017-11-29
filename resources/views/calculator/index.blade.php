@@ -9,14 +9,14 @@
 
             <div class="form-group">
 
-                <label>{{ __('lvl')}}</label>
+                <label>{{ __('calculator.lvl')}}</label>
                 <input type="text" name="lvl">
 
-                <label>{{ __('xp')}}</label>
+                <label>{{ __('calculator.xp')}}</label>
                 <input type="text" name="xp">
             </div>
 
-            <button type="submit" class="btn btn-primary">{{ __('Calculator')}}</button>
+            <button type="submit" class="btn btn-primary">{{ __('calculator.calculators')}}</button>
 
             @if(Session::has('erreurForm'))
                 {{ (string)Session::get('erreurForm') }}
@@ -29,15 +29,15 @@
             <tr class="header">
 
                 <th>
-                    {{ __('name')}}
+                    {{ __('calculator.name')}}
                 </th>
 
                 <th>
-                    {{ __('xp')}}
+                    {{ __('calculator.xp')}}
                 </th>
 
                 <th>
-                    {{ __('skill')}}
+                    {{ __('calculator.skill')}}
                 </th>
 
                 <th></th>
@@ -63,8 +63,6 @@
                     <td>
                         @if(Session::has('calculateur'))
                             {{ (int)Session::get('calculateur') / $LSC->xp }}
-
-
                         @endif
                     </td>
                 </tr>

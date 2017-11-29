@@ -1,6 +1,8 @@
 <?php
 return [
+    'lvl' => 'Niveau',
+    'xp' => 'Expérience',
+    'calculators' => 'Calculateur',
     'name' => 'Nom',
-    'competence' => 'Attribut',
-    'detail' => 'Détail',
+    'skill' => 'Compétence',
 ];
