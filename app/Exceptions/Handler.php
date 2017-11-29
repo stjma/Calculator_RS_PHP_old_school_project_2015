@@ -74,16 +74,16 @@ class Handler extends ExceptionHandler
             return redirect()->back();
         }
 
-        $this->Error($exception, "Exception");
+        $this->Error($exception,"Exception");
 
         return redirect()->back();
 
         //return parent::render($request, $exception);
     }
 
-    private function Error($error,$title){
+    private function Error($error, $title){
         $content = [
-                'title'=> '$title',
+                'title'=> $title,
                 'body'=> $error,
                 'button' => 'Click Here'
             ];
