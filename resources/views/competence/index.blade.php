@@ -8,13 +8,13 @@
 
             <div class="form-group">
 
-                <label>{{ __('name')}}</label>
+                <label>{{ __('competence.name')}}</label>
                 <input type="text" name="name">
 
-                <label>{{ __('xp')}}</label>
+                <label>{{ __('competence.xp')}}</label>
                 <input type="text" name="xp">
 
-                <label>{{ __('id_skill')}}</label>
+                <label>{{ __('competence.skill')}}</label>
                 <select name="id_skill">
                     @foreach($listSkill as $ls)
                         <option value="{{$ls->id}}">{{$ls->nameSkill}}</option>
@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">{{ __('Add')}}</button>
+            <button type="submit" class="btn btn-primary">{{ __('competence.add')}}</button>
         </form>
 
 
@@ -31,15 +31,15 @@
             <tr class="header">
 
                 <th>
-                    {{ __('name')}}
+                    {{ __('competence.name')}}
                 </th>
 
                 <th>
-                    {{ __('xp')}}
+                    {{ __('competence.xp')}}
                 </th>
 
                 <th>
-                    {{ __('skill')}}
+                    {{ __('competence.skill')}}
                 </th>
 
                 <th></th>
@@ -64,7 +64,7 @@
 
                     <td>
                         <button type="button" class="btn btn-info"
-                                data-toggle="collapse" href="#collapse{{ $LSC->id}}">Modifier
+                                data-toggle="collapse" href="#collapse{{ $LSC->id}}">{{ __('competence.mod')}}
                         </button>
                     </td>
 
@@ -76,13 +76,13 @@
                             {{ csrf_field() }}
                             <div>
 
-                                <label> {{ __('Name')}}</label>
+                                <label> {{ __('competence.name')}}</label>
                                 <input type="text" name="name" value={{$LSC->name }}>
 
-                                <label> {{ __('xp')}}</label>
+                                <label>{{ __('competence.xp')}}</label>
                                 <input type="text" name="xp" value={{$LSC->xp }}>
 
-                                <label>{{ __('skillName')}}</label>
+                                <label>{{ __('competence.skill')}}</label>
                                 <select name="table">
                                     @foreach($listSkill as $ls)
 
@@ -96,13 +96,12 @@
 
                                     @endforeach
                                 </select>
-                                <button type="submit" class="btn btn-info">Sauvegarder</button>
+                                <button type="submit" class="btn btn-info">{{ __('competence.save')}}</button>
                             </div>
                         </form>
                     </td>
                 </tr>
                 </tbody>
-
             @endforeach
         </table>
     </div>
