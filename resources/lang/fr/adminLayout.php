@@ -10,8 +10,8 @@ return [
     'fr' => 'Français',
     'change' => 'Changement',
     'logout' => 'Déconection',
-    'competence' => 'attribut',
+    'competence' => 'Attribut',
     'skill' => 'Compétence',
-    'xpTb' => 'table d\'expérience',
-    'xp' => 'expérience',
+    'xpTb' => 'Table d\'expérience',
+    'xp' => 'Expérience',
 ];

@@ -2,7 +2,7 @@
 return [
     'name' => 'Nom',
     'xp' => 'Expérience',
-    'skill' => 'Competence',
+    'skill' => 'Compétence',
 
 
     'add' => 'Ajouter',
