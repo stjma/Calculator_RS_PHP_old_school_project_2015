@@ -49,7 +49,7 @@ class SkillController extends Controller
             'name' => 'required',
         ]);
 
-        // Ajouter l'item
+        // Ajout dans la bade de donnée
         $Skill = new Skill();
         $Skill->nameSkill = $request->post('name');
         $Skill->id_XpTable = $request->post('table');
@@ -90,6 +90,7 @@ class SkillController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Modifier les données
         DB::table('skills')
             ->where('id', $id)
             ->update(['id_XpTable' => $request->post('table')]);

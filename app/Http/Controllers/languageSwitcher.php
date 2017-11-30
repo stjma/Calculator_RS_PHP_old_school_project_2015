@@ -14,9 +14,8 @@ class languageSwitcher extends Controller
      */
     public function index(Request $request)
     {
+        //Changer le language
         session(['language' => $request->post('txtLanguage')]);
-
-
         return redirect()->back();
     }
 

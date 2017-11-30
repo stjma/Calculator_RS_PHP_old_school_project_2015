@@ -60,6 +60,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        //Gestion de l'exception MethodNotAllowedHttpException
         if($exception instanceof MethodNotAllowedHttpException)
         {
             $this->Error($exception,"MethodNotAllowedHttpException");
@@ -67,6 +68,7 @@ class Handler extends ExceptionHandler
             return redirect()->back();
         }
 
+        //Gestion de l'exception NotFoundHttpException
         if($exception instanceof NotFoundHttpException)
         {
             $this->Error($exception,"NotFoundHttpException");
@@ -78,9 +80,9 @@ class Handler extends ExceptionHandler
 
         return redirect()->back();
 
-        //return parent::render($request, $exception);
     }
 
+    //Envoie des courriel lorsqu'il y a des erreurs
     private function Error($error, $title){
         $content = [
                 'title'=> $title,

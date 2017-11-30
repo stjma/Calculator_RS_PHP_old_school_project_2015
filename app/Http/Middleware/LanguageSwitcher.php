@@ -19,7 +19,7 @@ class LanguageSwitcher
      */
     public function handle($request, Closure $next)
     {
-        //session('language')
+        //MIddleware pour changer la langue
         App::setLocale((string)Session::get('language'));
         return $next($request);
     }

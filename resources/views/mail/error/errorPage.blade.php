@@ -1,3 +1,5 @@
+
+{{--Le template des emails--}}
 @component('mail::message')
 # {{ $content['title'] }}
 

@@ -16,7 +16,10 @@ class CompetenceController extends Controller
      */
     public function index($id = null)
     {
+
         $listSkill = Skill::get();
+
+        //Si le ip est null, afficher tous les Attributs.
         if(!$id){
             $lists = Competence::get();
 
@@ -26,6 +29,7 @@ class CompetenceController extends Controller
             ]);
         }
 
+        //Affichage de la liste des Competence (Attribus) qui ont un certain id
         $lists = Competence::get()->where('id_skill', '=', $id);
 
         return view('competence.index', [
@@ -55,9 +59,10 @@ class CompetenceController extends Controller
         // valider les données
         $validation = $request->validate([
             'name' => 'required',
+            'xp' => 'required|numeric',
         ]);
 
-        // Ajouter l'item
+        // Ajout dans la base de donnée
         $Competence = new Competence();
         $Competence->name = $request->post('name');
         $Competence->xp = $request->post('xp');
@@ -99,6 +104,7 @@ class CompetenceController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Modification de la table compétence
         DB::table('competences')
             ->where('id', $id)
             ->update(['name' => $request->post('name')]);

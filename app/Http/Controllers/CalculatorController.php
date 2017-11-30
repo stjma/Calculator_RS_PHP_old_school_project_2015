@@ -19,9 +19,10 @@ class CalculatorController extends Controller
      */
     public function index($id, $skill)
     {
-
+        //Tous les données de la table Compétence
         $listSkill = Skill::get();
 
+        //Tous les compétence qui a un certain id
         $lists = Competence::get()->where('id_skill', '=', $id);
 
         return view('calculator.index', [
@@ -70,6 +71,8 @@ class CalculatorController extends Controller
         $lvl = $request->post('lvl');
         $xp = $request->post('xp');
 
+
+        //COnvertir le lvl en xp
         $xpLvl = Xp::get()->where('lvl', '=', $lvl)->where('id_XpTable', '=', $id);
 
         $xpVoulu = 0;
@@ -79,25 +82,29 @@ class CalculatorController extends Controller
 
         $maxXp = DB::table('xps')->max('xp');
 
+        //Valider si le xp n'est pas trop grand
         if($xp >= $maxXp){
             return Redirect()->back()->withInput()->with("erreurForm", "lvl Trop grand");
         }
 
+        //L'expérience voulu doit être plus grand que le xp (Niveau couverti en xp)
         if($xp <= $xpVoulu){
             return Redirect()->back()->withInput()->with("erreurForm", "lvl trop grand pour xp");
         }
 
+        //Rechercher le lvl si il est dans la base de donnée.
         $lvlMax = Xp::get()->where('lvl', '=', $lvl);
 
-        $XpTropGrand = 0;
+        //Valider pour savoir si le lvl est trop grand par rapport a la bade de donnée
+        $LvlTropGrand = 0;
         foreach($lvlMax as $xp2){
-            $XpTropGrand = $xp2->lvl;
+            $LvlTropGrand = $xp2->lvl;
         }
-
-        if($XpTropGrand == 0){
+        if($LvlTropGrand == 0){
             return Redirect()->back()->withInput()->with("erreurForm", "Xp trop grand");
         }
 
+        //Calcul de la différence d'expérience
         $difXp = $xp - $xpVoulu;
 
         return Redirect()->back()->withInput()->with("calculateur", $difXp);

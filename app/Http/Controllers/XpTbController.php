@@ -86,6 +86,7 @@ class XpTbController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Modifier les données
         DB::table('xp_tbs')
             ->where('id', $id)
             ->update(['name' => $request->post('NameXpTable')]);

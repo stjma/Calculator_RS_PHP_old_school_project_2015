@@ -15,6 +15,7 @@ class UserListController extends Controller
      */
     public function index()
     {
+        //La page pour sélectionner quel compétence l'utilisateur veut faire le calcul
         $listsXp = XpTb::get();
         $lists = Skill::get();
 

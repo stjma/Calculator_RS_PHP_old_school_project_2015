@@ -13,6 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        //La page d'acceuil
         return view('user.index');
     }
 

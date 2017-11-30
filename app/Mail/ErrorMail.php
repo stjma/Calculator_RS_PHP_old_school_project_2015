@@ -13,8 +13,7 @@ class ErrorMail extends Mailable
 
     /**
      * Create a new message instance.
-     *
-     * @return void
+     * @param  $content
      */
     public function __construct($content)
     {

@@ -62,7 +62,7 @@ class XpController extends Controller
             'name' => 'required'
         ]);
 
-        // Ajouter l'item
+        // Ajout dans la base de donnée
         $Xp = new Xp();
         $Xp->lvl = $request->post('lvl');
         $Xp->xp = $request->post('xps');
@@ -105,6 +105,7 @@ class XpController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Modifier les données
         DB::table('xps')
             ->where('id', $id)
             ->update(['lvl' => $request->post('lvl')]);
