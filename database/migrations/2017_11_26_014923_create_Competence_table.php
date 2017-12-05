@@ -31,32 +31,32 @@ class CreateCompetenceTable extends Migration
         DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Harmonised mithril rock",80)');
         DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Runite",125)');
 
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Oily bakami",500)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Bundling bakami",525)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Salty bakami",550)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Stalking bakami",575)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Foraging bakami",600)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Ancestral bakami",625)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Murderous bakami",650)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Fortunate bakami",675)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Oily bakami",500)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Bundling bakami",525)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Salty bakami",550)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Stalking bakami",575)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Foraging bakami",600)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Ancestral bakami",625)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Murderous bakami",650)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Fortunate bakami",675)');
 
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Raw trout",50)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Raw salmon",70)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Leaping trout",50)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Leaping salmon",70)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Leaping sturgeon",80)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Small crystal urchin",310)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Medium crystal urchin",330)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (1,"Large crystal urchin",350)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Raw trout",50)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Raw salmon",70)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Leaping trout",50)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Leaping salmon",70)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Leaping sturgeon",80)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Small crystal urchin",310)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Medium crystal urchin",330)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (3,"Large crystal urchin",350)');
 
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"One",0)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Two",1160)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Three",2607)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Four",5176)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Five",8286)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Six",11760)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"Sevent",15835)');
-        DB::insert('insert into competences(id_skill, name, xp) VALUES (2,"eight",21152)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"One",0)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Two",1160)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Three",2607)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Four",5176)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Five",8286)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Six",11760)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"Sevent",15835)');
+        DB::insert('insert into competences(id_skill, name, xp) VALUES (4,"eight",21152)');
 
 
 
