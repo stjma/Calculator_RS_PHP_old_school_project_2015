@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateSkillTable extends Migration
 {
@@ -19,6 +20,12 @@ class CreateSkillTable extends Migration
             $table->string('nameSkill');
             $table->timestamps();
         });
+
+
+        DB::insert('insert into skills(id_XpTable, nameSkill) VALUES ( 1,"Mining")');
+        DB::insert('insert into skills(id_XpTable, nameSkill) VALUES ( 1,"Hunting")');
+        DB::insert('insert into skills(id_XpTable, nameSkill) VALUES ( 1,"Fishing")');
+        DB::insert('insert into skills(id_XpTable, nameSkill) VALUES ( 2,"Invention")');
     }
 
     /**
